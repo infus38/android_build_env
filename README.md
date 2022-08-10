@@ -10,7 +10,7 @@ podman build <path-to-the-Dockerfile> -t <image-name>
 
 ### Using the image
 ```sh
-podman run -v <path-to-los-src>:</home/builder/ -it <image-name/id> /bin/bash
+podman run -v <path-to-los-src>:<somewhere-in-the-container> -it <image-name/id> /bin/bash
 ```
 Now that you're all set up, it's time to start building !
 
