@@ -1,5 +1,8 @@
-## LineageOS build environment
-This repository provide you with a minimal containerized environment to build los (LineageOS). It simply embed required tools to build the project. Hence, you will need to bind mount the src onto the container which aren't sync during the build process of the container image. \
+## AOSP build environment
+This repository provides you with a minimal containerized environment to build AOSP (Android Open Source Project). It embeds the required tools to build the project. However, please note that you will need to obtain a copy of JDK 7 before building the image. Please refer to the Dockerfile for further information on how to include JDK 7 in the environment.
+
+Additionally, you'll need to mount the source code onto the container as it is not provided by the container image. \
+
 _**Required tool**: your prefered OCI container manager (podman, docker, ...)_
 
 ### Building the image
