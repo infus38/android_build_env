@@ -13,6 +13,3 @@ podman build <path-to-the-Dockerfile> -t <image-name>
 podman run -v <path-to-los-src>:<somewhere-in-the-container> -it <image-name/id> /bin/bash
 ```
 Now that you're all set up, it's time to start building !
-
-### Fixing symlinks issues with bind mounted volume (podman 4.1.1)
-__ls: cannot access ‘some_directory': Timer expired__ > This is due to some security model breaking symlinks. To fix that, simply switch from mapped-xattr to none in `~/.config/containers/podman/machine/qemu/podman-machine-default.json` once you initialized the podman machine
