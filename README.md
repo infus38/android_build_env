@@ -13,4 +13,4 @@ podman build <path-to-the-Dockerfile> -t <image-name>
 ```sh
 podman run --rm  -v <path-to-lk2nd-src>:/home/build/ <image-name/id> 
 ```
-> Note: `-e TOOLCHAIN_PREFIX=arm-none-eabi- -e TARGET=lk2nd-msm8226` If needed, adjust the TOOLCHAIN_PREFIX and TARGET environment variables to suit your needs.
+> Note: `-e TOOLCHAIN_PREFIX=arm-none-eabi- -e TARGET=lk2nd-msm8226` Already specified in dockerfile. If needed, adjust those environment variables to suit your needs.
