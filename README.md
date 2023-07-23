@@ -13,3 +13,14 @@ podman build <path-to-the-Dockerfile> -t <image-name>
 podman run -v <path-to-los-src>:<somewhere-in-the-container> -it <image-name/id> /bin/bash
 ```
 Now that you're all set up, it's time to start building !
+
+### Fixing "too many open files" issues with bind mounted volume (podman 4.5.1)
+On macOS, check for your maximum stack size using the following command:
+```sh
+sysctl kern.stack_size
+```
+and set it accordingly, using the 'ulimit' utility.
+```sh 
+ulimit -s 16384
+```
+> Note: `16384` is for reference
