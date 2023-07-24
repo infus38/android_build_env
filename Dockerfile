@@ -14,6 +14,7 @@ RUN apt-get install -y bc \
 	build-essential \
 	ccache \
 	curl \
+	git \
 	flex \
 	g++-multilib \
 	gcc-multilib \
@@ -24,6 +25,8 @@ RUN apt-get install -y bc \
 	lib32readline-dev \
 	lib32z1-dev \
 	liblz4-tool \
+	openjdk-8-jdk \
+	python \
 	libncurses5 \
 	libncurses5-dev \
 	libsdl1.2-dev \
