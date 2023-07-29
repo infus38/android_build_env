@@ -46,3 +46,7 @@ RUN apt-get install -y bc \
 # server SSL issue during the build. 
 RUN perl -0777 -i -p -e 's/(jdk.tls.disabledAlgorithms=.*?), TLSv1, TLSv1\.1/$1/g' \
 	/etc/java-8-openjdk/security/java.security 
+
+# Required for the Jack server; the ability to edit those params will be available soon.
+ENV USER=root
+ENV ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
