@@ -50,3 +50,13 @@ RUN perl -0777 -i -p -e 's/(jdk.tls.disabledAlgorithms=.*?), TLSv1, TLSv1\.1/$1/
 # Required for the Jack server; the ability to edit those params will be available soon.
 ENV USER=root
 ENV ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
+
+# Default to 4 jobs unless specified
+ENV JOBS_NUMBER=4
+
+WORKDIR /home/build/
+# Implement the routine in the form of a script
+COPY entrypoint.sh /home/entrypoint.sh
+RUN chmod +x /home/entrypoint.sh
+
+CMD ["/bin/bash", "/home/entrypoint.sh"]
