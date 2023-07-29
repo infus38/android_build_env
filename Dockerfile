@@ -41,3 +41,8 @@ RUN apt-get install -y bc \
 	xsltproc \
 	zip \
 	zlib1g-dev 
+
+# Address the deprecation of TLSv1 and TLSv1.1 to resolve the Jack 
+# server SSL issue during the build. 
+RUN perl -0777 -i -p -e 's/(jdk.tls.disabledAlgorithms=.*?), TLSv1, TLSv1\.1/$1/g' \
+	/etc/java-8-openjdk/security/java.security 
