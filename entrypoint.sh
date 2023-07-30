@@ -23,7 +23,9 @@ echo -e "\nBuild Settings\n\
 # By default, it uses the number of available CPU cores for parallel processing."
 
 # Number of jobs used for build process.
-JOBS_NUMBER=$(nproc) # Defaults to the number of available CPU cores.
+if [ -z "$JOBS_NUMBER" ]; then
+    JOBS_NUMBER=$(nproc) # Defaults to the number of available CPU cores.
+fi 
 
 # Display the current JOBS_NUMBER to the user 
 echo -e "${BLUE_COLOR}> Current JOBS_NUMBER is set to: $JOBS_NUMBER${RESET_COLOR}\n\n\
