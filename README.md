@@ -12,7 +12,7 @@ podman build <path-to-the-Dockerfile> -t <image-name>
 ```sh
 podman run -e TARGET=<your_device_codename> -v <path-to-los-src>:<somewhere-in-the-container> -it <image-name/id>
 ```
-> Note: you set your own nb of jobs using the `JOBS_NUMBER`` env var
+> Note: you set your own nb of jobs using the `JOBS_NUMBER` env var
 
 Now that you're all set up, it's time to start building !
 
